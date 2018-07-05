@@ -22,14 +22,18 @@ function TicketList(props){
         location={ticket.location}
         issue={ticket.issue}
         formattedWaitTime={ticket.formattedWaitTime}
-        key={ticket.id} />
+        currentRouterPath={props.currentRouterPath}
+        key={ticket.id}
+        onTicketSelection={props.onTicketSelection} />
     )}
     {/* <div>{obj}</div> */}
   </div>
   );
 };
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;
